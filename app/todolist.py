@@ -11,12 +11,8 @@ class ToDoList():
     def __init__(self):
         self.task_list = []
 
-    def add_task(self, name, description, deadline):
-        task = Task()
-        task.name = name
-        task.description = description
-        task.deadline = deadline
-        task.is_complited = False
+    def add_task(self, user, name, description, deadline):
+        task = Task(user=user, name=name, description=description, deadline=deadline, is_complited=False)
         self.task_list.append(task)
 
     def send_notification(self, today, task):

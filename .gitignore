@@ -3,3 +3,4 @@ venv/
 .idea/
 *.ipynb
 __pycache__/
+/app/.pytest_cache/

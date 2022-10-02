@@ -1,0 +1,26 @@
+
+
+syntax = "proto3";
+
+message Null {}
+
+message Task {
+    string name = 1;
+    string description = 2;
+    string deadline = 3;
+    bool is_completed = 4;
+}
+
+message Response_added {
+    uint32 days_before_deadline = 1;
+    bool added  = 2;
+}
+
+message Response_completed {
+    bool completed  = 1;
+}
+
+service ProcessTasks {
+rpc AddTask(Task) returns (Response_added) {}
+rpc Complete(Task) returns (Response_completed) {}
+}
